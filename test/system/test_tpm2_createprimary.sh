@@ -54,7 +54,7 @@ cleanup
 # values.
 for gAlg in 0x04 sha256 0x0C; do
     for GAlg in 0x01 keyedhash ecc 0x25; do
-        for Atype in o e p n; do
+        for Atype in o e n; do
             tpm2_createprimary -Q -A $Atype -g $gAlg -G $GAlg -C context.out
             cleanup keep_context
         done
